@@ -1,4 +1,6 @@
+import 'package:assignment5/pages/error.dart';
 import 'package:assignment5/pages/homepage.dart';
+import 'package:assignment5/pages/sucees_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: "/",
+      routes: {
+        '/homepage': (context) => HomePage(),
+        '/success': (context) => SuccessPage(),
+        '/error': (context) => ErrorPage()
+      },
       home: HomePage(),
     );
   }

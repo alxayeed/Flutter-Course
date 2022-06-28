@@ -1,4 +1,6 @@
+import 'package:assignment5/pages/error.dart';
 import 'package:assignment5/pages/sucees_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -86,13 +88,16 @@ class HomePage extends StatelessWidget {
                                 MaterialButton(
                                   color: Colors.amberAccent,
                                   onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const SuccessPage()));
+                                    Navigator.pushNamed(context, '/success');
                                   },
                                   child: const Text("Confirm"),
+                                ),
+                                MaterialButton(
+                                  color: Colors.amberAccent,
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("Dismiss"),
                                 )
                               ],
                               content: SizedBox(
@@ -110,6 +115,8 @@ class HomePage extends StatelessWidget {
                               ),
                             );
                           });
+                    } else {
+                      Navigator.pushNamed(context, '/error');
                     }
                   },
                   child: const Text("Validate"),
