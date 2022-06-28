@@ -1,6 +1,0 @@
-The core concepts of OOP are the followings -
-
-1. Encapsulation 
-2. Inheritance
-3. Abstraction
-4. Polymorphism
