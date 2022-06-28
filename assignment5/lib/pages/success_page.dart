@@ -12,7 +12,7 @@ class SuccessPage extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, "/homepage");
         },
-        child: Icon(Icons.arrow_back_ios_sharp),
+        child: const Icon(Icons.arrow_back_ios_sharp),
       ),
     );
   }

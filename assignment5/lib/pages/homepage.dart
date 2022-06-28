@@ -1,5 +1,5 @@
 import 'package:assignment5/pages/error.dart';
-import 'package:assignment5/pages/sucees_page.dart';
+import 'package:assignment5/pages/success_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: const Text("I N P U T S"),
+        title: const Text(
+          "I N P U T S",
+          style: TextStyle(fontFamily: 'vaca'),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
