@@ -20,14 +20,28 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //localizations
       translations: Languages(),
-      locale: Locale('en', 'US'),
-      fallbackLocale: Locale('bn', 'BD'),
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('bn', 'BD'),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        // fontFamily: 'vaca',
-        textTheme:
-            GoogleFonts.exoTextTheme(Theme.of(context).textTheme.apply()),
-      ),
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.cyan),
+          dialogBackgroundColor: Colors.yellow.shade50,
+          hintColor: Colors.blue.shade900,
+          primarySwatch: Colors.blue,
+          errorColor: Colors.redAccent.shade400,
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              backgroundColor: Colors.cyan, selectedItemColor: Colors.white),
+
+          // fontFamily: 'vaca',
+          textTheme: const TextTheme(
+            button: TextStyle(fontSize: 18.0),
+            bodyText2: TextStyle(fontSize: 16.0),
+          ),
+          useMaterial3: true,
+
+          //button theme
+          buttonTheme: const ButtonThemeData(focusColor: Colors.black),
+          floatingActionButtonTheme: FloatingActionButtonThemeData()),
+
       initialRoute: "/",
       routes: {
         '/homepage': (context) => HomePage(),

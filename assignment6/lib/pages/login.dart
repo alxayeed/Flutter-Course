@@ -110,13 +110,15 @@ class Login extends StatelessWidget {
                                         Text(_emailController.text),
                                       ],
                                     ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text("contactNo".tr),
-                                        Text(_numberController.text),
-                                      ],
+                                    Expanded(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text("contactNo".tr),
+                                          Text(_numberController.text),
+                                        ],
+                                      ),
                                     ),
                                     Row(
                                       mainAxisAlignment:
