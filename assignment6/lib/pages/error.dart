@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({Key? key}) : super(key: key);
@@ -12,14 +13,14 @@ class ErrorPage extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Oops! inputs are not correct!"),
+            Text("errorInfo".tr),
             MaterialButton(
               color: Colors.red,
               textColor: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, '/homepage');
               },
-              child: const Text("Try Again"),
+              child: Text("buttonTryAgain".tr),
             )
           ],
         )),

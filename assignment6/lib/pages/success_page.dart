@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SuccessPage extends StatelessWidget {
   const SuccessPage({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class SuccessPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(child: Text("Welcome")),
+      body: Center(child: Text("welcome".tr)),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, "/homepage");

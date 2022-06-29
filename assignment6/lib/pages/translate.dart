@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TranslatePage extends StatelessWidget {
   const TranslatePage({Key? key}) : super(key: key);
@@ -15,14 +16,18 @@ class TranslatePage extends StatelessWidget {
             MaterialButton(
               color: Colors.cyan,
               textColor: Colors.white,
-              onPressed: () {},
-              child: const Text("Bangla"),
+              onPressed: () {
+                Get.updateLocale(Locale('bn', 'BD'));
+              },
+              child: Text("buttonBangla".tr),
             ),
             MaterialButton(
               color: Colors.amber,
               textColor: Colors.black,
-              onPressed: () {},
-              child: const Text("English"),
+              onPressed: () {
+                Get.updateLocale(Locale('en', 'US'));
+              },
+              child: Text("buttonEnglish".tr),
             )
           ],
         )),

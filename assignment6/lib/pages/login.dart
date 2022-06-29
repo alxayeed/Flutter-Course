@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);
@@ -27,12 +28,12 @@ class Login extends StatelessWidget {
               TextFormField(
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(hintText: "Enter email"),
+                decoration: InputDecoration(hintText: "textBoxEmail".tr),
                 validator: (val) {
                   if (val!.isEmpty) {
-                    return "Email can't be empty";
+                    return "textBoxNotEmptyInfo".tr;
                   } else if (val.length <= 8) {
-                    return "Email should be more than 8 letters";
+                    return "textBoxEmailInfo".tr;
                   } else {
                     return null;
                   }
@@ -41,13 +42,12 @@ class Login extends StatelessWidget {
               TextFormField(
                 controller: _numberController,
                 keyboardType: TextInputType.number,
-                decoration:
-                    const InputDecoration(hintText: "Enter phone number"),
+                decoration: InputDecoration(hintText: "textBoxPhnNo".tr),
                 validator: (val) {
                   if (val!.isEmpty) {
-                    return "Phone number can't be empty";
+                    return "textBoxNotEmptyInfo".tr;
                   } else if (val.length <= 11) {
-                    return "Phone number should be 11 digits";
+                    return "textBoxPhnNoInfo".tr;
                   } else {
                     return null;
                   }
@@ -58,12 +58,12 @@ class Login extends StatelessWidget {
                 obscureText: true,
                 obscuringCharacter: "*",
                 keyboardType: TextInputType.visiblePassword,
-                decoration: const InputDecoration(hintText: "Enter Password"),
+                decoration: InputDecoration(hintText: "textBoxPassword".tr),
                 validator: (val) {
                   if (val!.isEmpty) {
-                    return "Password can't be empty";
+                    return "textBoxNotEmptyInfo".tr;
                   } else if (val.length <= 8) {
-                    return "Password should be at least  8 letters";
+                    return "textBoxPasswordInfo".tr;
                   } else {
                     return null;
                   }
@@ -87,14 +87,14 @@ class Login extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/success');
                                   },
-                                  child: const Text("Confirm"),
+                                  child: Text("buttonConfirm".tr),
                                 ),
                                 MaterialButton(
                                   color: Colors.amberAccent,
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  child: const Text("Dismiss"),
+                                  child: Text("buttonDismiss".tr),
                                 )
                               ],
                               content: SizedBox(
@@ -102,11 +102,30 @@ class Login extends StatelessWidget {
                                 width: 350,
                                 child: Column(
                                   children: [
-                                    Text("Email: ${_emailController.text}"),
-                                    Text(
-                                        "Contact Number: ${_numberController.text}"),
-                                    Text(
-                                        "Password: ${_passwordController.text}"),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text("email".tr),
+                                        Text(_emailController.text),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text("contactNo".tr),
+                                        Text(_numberController.text),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text("password".tr),
+                                        Text(_numberController.text),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -116,7 +135,7 @@ class Login extends StatelessWidget {
                       Navigator.pushNamed(context, '/error');
                     }
                   },
-                  child: const Text("Validate"),
+                  child: Text("buttonValidate".tr),
                 ),
               )
             ],

@@ -3,6 +3,7 @@ import 'package:assignment5/pages/success_page.dart';
 import 'package:assignment5/pages/translate.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'login.dart';
 
@@ -30,19 +31,20 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           centerTitle: true,
           elevation: 0,
-          title: const Text(
-            "I N P U T S",
-            style: TextStyle(fontFamily: 'vaca'),
+          title: Text(
+            'appBarTitle'.tr,
+            style: const TextStyle(fontFamily: 'vaca'),
           ),
         ),
         body: pages[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: changeIndex,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.language), label: "Translate"),
+                icon: const Icon(Icons.home), label: "labelHome".tr),
+            BottomNavigationBarItem(
+                icon: const Icon(Icons.language), label: "labelTranslate".tr),
           ],
         ));
   }
